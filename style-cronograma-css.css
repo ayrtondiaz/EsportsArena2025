@@ -1,0 +1,58 @@
+/* Estilos específicos para la página de cronograma */
+#cronograma {
+    padding-top: 150px;
+    padding-bottom: 60px;
+    position: relative;
+    min-height: calc(100vh - 200px);
+    z-index: 1;
+}
+
+.cronograma-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.cronograma-header::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.cronograma-title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(181, 126, 220, 0.5);
+    color: #ffffff;
+}
+
+.cronograma-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+/* Estilos para los tabs */
+.schedule-tabs {
+    margin-bottom: 30px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid rgba(181, 126, 220, 0.3);
+    display: flex;
+    justify-content: center;
+}
+
+.nav-tabs .nav-

@@ -1,0 +1,113 @@
+/* Neon Animation Effects for Header */
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 5px rgba(155, 89, 182, 0.7), 0 0 10px rgba(155, 89, 182, 0.7), 0 0 15px rgba(155, 89, 182, 0.7);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(155, 89, 182, 0.9), 0 0 20px rgba(155, 89, 182, 0.9), 0 0 30px rgba(155, 89, 182, 0.9);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(155, 89, 182, 0.7), 0 0 10px rgba(155, 89, 182, 0.7), 0 0 15px rgba(155, 89, 182, 0.7);
+  }
+}
+
+@keyframes neonBorder {
+  0% {
+    box-shadow: 0 0 5px rgba(155, 89, 182, 0.7), 0 0 10px rgba(155, 89, 182, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.9), 0 0 20px rgba(155, 89, 182, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(155, 89, 182, 0.7), 0 0 10px rgba(155, 89, 182, 0.7);
+  }
+}
+
+@keyframes neonGlow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(155, 89, 182, 0.7));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(155, 89, 182, 0.9));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(155, 89, 182, 0.7));
+  }
+}
+
+/* Header Neon Styles */
+header {
+  border-bottom: 1px solid rgba(155, 89, 182, 0.5);
+  box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
+  transition: all 0.3s ease;
+}
+
+header:hover {
+  box-shadow: 0 0 20px rgba(155, 89, 182, 0.5);
+  animation: neonBorder 2s infinite;
+}
+
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #b57edc !important;
+  text-shadow: 0 0 10px rgba(155, 89, 182, 0.8), 0 0 20px rgba(155, 89, 182, 0.5);
+  animation: neonPulse 2s infinite;
+}
+
+.nav-link::after {
+  background-color: #b57edc;
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.8);
+  height: 2px;
+  transition: all 0.3s ease;
+}
+
+.logo-container {
+  transition: all 0.3s ease;
+}
+
+.logo-container:hover {
+  animation: neonGlow 2s infinite;
+}
+
+.logo-mascot {
+  transition: all 0.3s ease;
+}
+
+.logo-mascot:hover {
+  filter: drop-shadow(0 0 10px rgba(155, 89, 182, 0.8));
+  animation: neonGlow 2s infinite;
+}
+
+/* Active menu item with neon effect */
+.nav-item .nav-link.active {
+  color: #b57edc !important;
+  text-shadow: 0 0 10px rgba(155, 89, 182, 0.8), 0 0 20px rgba(155, 89, 182, 0.5);
+  animation: neonPulse 2s infinite;
+}
+
+.nav-item .nav-link.active::after {
+  background-color: #b57edc;
+  box-shadow: 0 0 10px rgba(155, 89, 182, 0.8);
+}
+
+/* Dropdown menu with neon effect */
+.dropdown-menu {
+  border: 1px solid rgba(155, 89, 182, 0.3);
+  box-shadow: 0 0 15px rgba(155, 89, 182, 0.3);
+}
+
+.dropdown-item:hover {
+  background-color: rgba(155, 89, 182, 0.2);
+  border-left: 3px solid #b57edc;
+  box-shadow: inset 0 0 10px rgba(155, 89, 182, 0.2);
+}
+
+.dropdown-item.active {
+  border-left: 3px solid #b57edc !important;
+  box-shadow: inset 0 0 10px rgba(155, 89, 182, 0.2);
+}
+

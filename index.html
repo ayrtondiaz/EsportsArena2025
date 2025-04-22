@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esports Arena | JUL 20</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="neon-animations.css">
+    <link rel="stylesheet" href="social-media.css">
+
+</head>
+<body>
+    <!-- Elementos de fondo gaming (solo grid y orbs, plexus se moverá) -->
+    <div class="grid"></div>
+    <div class="orb-container">
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+    <!-- Fin elementos de fondo gaming -->
+    
+    <!-- Header -->
+     <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-container">
+                        <a href="./index.html"><img src="./assets/logo.webp" style="width: 30%;" alt="Esports Arena Logo" class="logo"></a>
+                        
+                     </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="info.html" id="infoDropdown" role="button">
+                            INFO
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <li><a class="dropdown-item" href="info.html#about">SOBRE NOSOTROS</a></li>                            
+                            <li><a class="dropdown-item" href="info.html#ubicacion">UBICACIÓN</a></li>
+                            <li><a class="dropdown-item" href="info.html#faqs">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="cronograma.html">CRONOGRAMA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">NEWS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="entradas.html">ENTRADAS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTO</a></li>
+                </ul>
+                <a class="navbar-brand ms-auto" href="index.html">
+                    <div class="logo-container">
+                        <!-- <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mascotits-o1yluqwcoFq6kZksDY54adv2e95QFu.png" alt="Esports Arena Logo" class="logo-mascot"> --> -->
+                        <img src="./assets/logo-blanco.webp" alt="Esports Arena Logo" class="logo-mascot">
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>  
+    <!-- Hero Carousel -->
+    <section id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Contenido sin cambios -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero-image-container">
+                    <img src="./assets/portada1.webp" class="d-block w-100" alt="Esports Event">
+                    
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-image-container">
+                    <img src="./assets/portada2.webp" class="d-block w-100" alt="Esports Event">
+                
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="hero-image-container">
+                    <a target="_blank" href="https://www.bindin.gg/events/279edb0a-db74-4456-8f14-fa408aa39a38">
+                        
+                        <img src="./assets/portada3.webp" class="d-block w-100" alt="Esports Event">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2"></button>
+        </div>
+    </section>
+
+    <!-- Sección de fondo con plexus para las demás secciones -->
+    <div id="plexus-background-container">
+        <!-- Canvas de plexus solo para esta sección -->
+        <canvas id="plexus-canvas"></canvas>
+
+        <!-- Featured Teams -->
+        <!-- <section id="featured-teams" class="py-5">
+            <!-- Contenido sin cambios -->
+            <!-- <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Team Vitality" class="img-fluid">
+                            <div class="team-info">
+                                <h3>VITALITY</h3>
+                                <p>Presentamos la nueva máscota que nos acompañará en este evento, el es "NOA".</p>
+                                <p class="team-hashtag">#esports #gaming #championship</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Team NOA" class="img-fluid">
+                            <div class="team-info">
+                                <h3>NOA</h3>
+                                <p>Presentamos la nueva máscota que nos acompañará en este evento, el es "NOA".</p>
+                                <p class="team-hashtag">#esports #gaming #championship</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="team-card">
+                            <img src="/placeholder.svg?height=300&width=300" alt="Main Stage" class="img-fluid">
+                            <div class="team-info">
+                                <h3>MAIN STAGE</h3>
+                                <p>Presentamos la nueva máscota que nos acompañará en este evento, el es "NOA".</p>
+                                <p class="team-hashtag">#esports #gaming #championship</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            <!-- </div>
+        </section> -->
+
+
+
+        <section class="social-media">
+            <div class="container">
+              <div class="row justify-content-center text-center">
+                <div class="col-md-8 col-sm-12">
+                    <hr>
+                  <h3 class="glow-text">Enterate de todas las novedades, primicias y exclusivas del evento del año a través de nuestro medio oficial.</h3>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <img class="logo-social img-fluid" src="./social/Logo-completo-color-invertido.webp" alt="Logo Social Media">
+                </div>
+              </div>
+              <div class="row sponsors-row">
+                <div class="col-6 col-md-3 mb-4">
+                  <div class="sponsor-logo2">
+                    <div class="host-overlay">
+                      <span class="host-name">SHUGAR</span>
+                      <span class="host-role">Gaming Expert</span>
+                      <span class="host-desc">Experto en gaming y esports</span>
+                    </div>
+                    <img src="./social/SHUGAR.webp" alt="SHUGAR" class="img-fluid">
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                  <div class="sponsor-logo2">
+                    <div class="host-overlay">
+                      <span class="host-name">MACA</span>
+                      <span class="host-role">Analista</span>
+                      <span class="host-desc">Especialista en contenido digital</span>
+                    </div>
+                    <img src="./social/MACA.webp" alt="MACA" class="img-fluid">
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                  <div class="sponsor-logo2">
+                    <div class="host-overlay">
+                      <span class="host-name">MATI</span>
+                      <span class="host-role">CEO</span>
+                      <span class="host-desc">Estratega profesional de esports</span>
+                    </div>
+                    <img src="./social/MATI.webp" alt="MATI" class="img-fluid">
+                  </div>
+                </div>
+                <div class="col-6 col-md-3 mb-4">
+                  <div class="sponsor-logo2">
+                    <div class="host-overlay">
+                      <span class="host-name">ROCIO</span>
+                      <span class="host-role">Gaming Expert</span>
+                      <span class="host-desc">Comentarista de torneos internacionales</span>
+                    </div>
+                    <img src="./social/ROCIO.webp" alt="ROCIO" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <h6><span class="highlight-text">📺 InFernales SocialMedia</span>, todos los martes y jueves de 19:30 a 21:00 hs, en vivo por el canal de YouTube de PUE.</h6>
+
+                  <a href="https://www.youtube.com/@pueok" class="btn btn-watch" target="_blank">
+                    <i class="fab fa-youtube"></i> Ver el canal
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        <!-- Tickets CTA -->
+        <section id="tickets-cta" class="py-5">
+            <!-- Contenido sin cambios -->
+            <div class="container-fluid text-center">
+                <div class="row">
+                    <a target="_blank" href="https://www.bindin.gg/events/279edb0a-db74-4456-8f14-fa408aa39a38"><img class="cta-box img-fluid" src="./partners/botonesra.png" alt="Comprar entradas"></a>
+                    <!-- <h2 class="glow-text">ADQUIRÍ TUS ENTRADAS YA!</h2> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsors -->
+        <section id="sponsors" class="py-5">
+            <div class="container text-center">
+                <h2 class="section-title">PATROCINA</h2>
+                <div class="row sponsors-row">
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/NISUTA_ICON.png" alt="Globant" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/partners/infernales_blanco_icon.png" alt="Speed Unlimited" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/partners/liens.png" alt="AMD" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/partners/NISUTA_LOGO_16171B_png.png" alt="Samsung" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="row sponsors-row">
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners -->
+        <section id="partners" class="py-5">
+            <div class="container text-center">
+                <h2 class="section-title">ACOMPAÑA</h2>
+                <div class="row sponsors-row">
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="more-partners" class="py-5">
+            <div class="container text-center">
+                <h2 class="section-title">PARTNERS</h2>
+                <div class="row sponsors-row">
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="/partners/PUE_BLANCO.png" alt="PUE" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/BINDIN.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-5-custom mb-4">
+                        <div class="sponsor-logo">
+                            <img src="./partners/misterio.png?height=80&width=80" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="py-5 gamer-footer">
+        <div class="footer-bg-overlay"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="footer-social">
+                        <h3 class="footer-title">SÍGUENOS <i class="fas fa-headset ms-2"></i></h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                        </div>
+                        <p class="footer-slogan mt-3">ÚNETE A LA COMUNIDAD GAMER DEFINITIVA</p>
+                    </div>
+                </div>
+                <div class="col-md-5 text-end">
+                    <div class="footer-logo">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mascotits-o1yluqwcoFq6kZksDY54adv2e95QFu.png" alt="Esports Arena Mascot" class="img-fluid glow-effect" style="max-height: 120px;">
+                        <p class="hashtag neo-text">#ESPORTSARENA2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <!-- <div class="footer-nav">
+                        <a href="index.html">INICIO</a>
+                        <a href="info.html">INFO</a>
+                        <a href="#">CRONOGRAMA</a>
+                        <a href="news.html">NEWS</a>
+                        <a href="entradas.html">ENTRADAS</a>
+                        <a href="contact.html">CONTACTO</a>
+                    </div> -->
+                    <b><hr></b>
+                    <p class="copyright mt-3">© 2025 Esports Arena. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+    <script src="menu-active.js"></script>
+    <script src="plexus-background.js"></script>
+    <script src="social-media-animation.js" ></script>
+    <script src="mobile-detector.js" ></script>
+</body>
+</html>

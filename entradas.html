@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entradas - Esports Arena | JUL 20</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="neon-animations.css">
+    <style>
+        /* Estilos específicos para la página de entradas */
+        .step-card {
+            background: rgba(42, 10, 74, 0.4);
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(181, 126, 220, 0.3);
+        }
+        
+        .step-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(181, 126, 220, 0.1) 0%, transparent 100%);
+            z-index: -1;
+        }
+        
+        .step-number {
+            font-size: 5rem;
+            font-weight: 800;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            opacity: 0.1;
+            color: var(--accent-color);
+            line-height: 1;
+        }
+        
+        .step-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .step-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .ticket-cta {
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--accent-color);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(181, 126, 220, 0.3);
+            animation: glowPulse 3s infinite alternate;
+        }
+        
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 15px rgba(181, 126, 220, 0.3); }
+            100% { box-shadow: 0 0 30px rgba(181, 126, 220, 0.6); }
+        }
+        
+        .ticket-cta h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+        }
+        
+        .btn-ticket {
+            background: var(--accent-color);
+            color: var(--dark-purple);
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-ticket::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(238, 234, 234, 0.2), transparent);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        
+        .btn-ticket:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            color: var(--text-color);
+        }
+        
+        .btn-ticket:hover::before {
+            left: 100%;
+        }
+        
+        .info-icon {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+        
+        /* Animación para los pasos */
+        .step-card {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .step-card.animated {
+            animation: fadeInUp 0.6s forwards;
+        }
+        
+        .step-card:nth-child(1) { animation-delay: 0.1s; }
+        .step-card:nth-child(2) { animation-delay: 0.3s; }
+        .step-card:nth-child(3) { animation-delay: 0.5s; }
+        .step-card:nth-child(4) { animation-delay: 0.7s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Fondo de partículas */
+        .particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Elementos de fondo gaming
+    <div class="grid"></div>
+    <div class="orb-container">
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+    <canvas id="plexus-canvas" class="particles-bg"></canvas>
+     Fin elementos de fondo gaming -->
+     
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-container">
+                        <a href="./index.html"><img src="./assets/logo.webp" style="width: 30%;" alt="Esports Arena Logo" class="logo"></a>
+                        
+                     </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="info.html" id="infoDropdown" role="button">
+                            INFO
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <li><a class="dropdown-item" href="info.html#about">SOBRE NOSOTROS</a></li>                            
+                            <li><a class="dropdown-item" href="info.html#ubicacion">UBICACIÓN</a></li>
+                            <li><a class="dropdown-item" href="info.html#faqs">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="cronograma.html">CRONOGRAMA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">NEWS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="entradas.html">ENTRADAS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTO</a></li>
+                </ul>
+                <a class="navbar-brand ms-auto" href="index.html">
+                    <div class="logo-container">
+                        <!-- <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mascotits-o1yluqwcoFq6kZksDY54adv2e95QFu.png" alt="Esports Arena Logo" class="logo-mascot"> --> -->
+                        <img src="./assets/logo-blanco.webp" alt="Esports Arena Logo" class="logo-mascot">
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header> 
+    <!-- Info Section -->
+    <section id="info">
+        <div class="container">
+            <div class="info-header" id="about">
+                <h1 class="info-title">ENTRADAS</h1>
+                <p class="info-description">
+                    ¡YA PODÉS ADQUIRIR TUS ENTRADAS DESDE <span style="color: var(--accent-color); font-weight: 700;">BINDIN.GG</span>!
+                </p>
+            </div>
+
+            <div class="ticket-cta mb-5">
+                <h3>¡ASEGURA TU LUGAR AHORA!</h3>
+                <p class="mb-4">No te pierdas el evento gaming más grande del año. Las entradas son limitadas.</p>
+                <a href="https://www.bindin.gg/events/279edb0a-db74-4456-8f14-fa408aa39a38" target="_blank" class="btn btn-ticket">
+                    <i class="fas fa-ticket-alt me-2"></i> COMPRAR ENTRADAS
+                </a>
+            </div>
+
+            <h3 class="contact-title mb-5">CÓMO COMPRAR TU ENTRADA</h3>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h4 class="step-title"><i class="fas fa-user-plus info-icon"></i>REGISTRO</h4>
+                        <p class="step-description">Ingresa a la página oficial de <strong>bindin.gg</strong> y regístrate utilizando el método que prefieras (email, redes sociales o Google).</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h4 class="step-title"><i class="fas fa-search info-icon"></i>BÚSQUEDA</h4>
+                        <p class="step-description">Dirígete a la sección de <strong>Eventos</strong> y busca <strong>"Esports Arena"</strong> para encontrar nuestro evento y seleccionar tu entrada.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h4 class="step-title"><i class="fas fa-qrcode info-icon"></i>CONFIRMACIÓN</h4>
+                        <p class="step-description">Una vez realizada la compra, recibirás en tu email el comprobante y un código QR para ingresar al evento. También podrás ver tu entrada en la sección <strong>"Mis Entradas"</strong> de tu perfil.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h4 class="step-title"><i class="fas fa-gamepad info-icon"></i>TORNEOS</h4>
+                        <p class="step-description">¿Quieres participar en algún torneo? Una vez comprada la entrada, ve al torneo que te interese y completa el formulario de inscripción haciendo clic en el botón <strong>"Registrarse"</strong>.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="alert alert-info" style="background-color: rgba(181, 126, 220, 0.2); border-color: var(--accent-color); color: var(--text-color);">
+                        <h5><i class="fas fa-info-circle me-2"></i> Información importante</h5>
+                        <ul class="mb-0">
+                            <li>Las entradas son personales e intransferibles</li>
+                            <li>Debes presentar tu identificación junto con el código QR</li>
+                            <li>No se permiten reembolsos, pero puedes transferir tu entrada contactando a soporte</li>
+                            <li>Menores de 16 años deben estar acompañados por un adulto</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 gamer-footer">
+        <div class="footer-bg-overlay"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="footer-social">
+                        <h3 class="footer-title">SÍGUENOS <i class="fas fa-headset ms-2"></i></h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                        </div>
+                        <p class="footer-slogan mt-3">ÚNETE A LA COMUNIDAD GAMER DEFINITIVA</p>
+                    </div>
+                </div>
+                <div class="col-md-5 text-end">
+                    <div class="footer-logo">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mascotits-o1yluqwcoFq6kZksDY54adv2e95QFu.png" alt="Esports Arena Mascot" class="img-fluid glow-effect" style="max-height: 120px;">
+                        <p class="hashtag neo-text">#ESPORTSARENA2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <!-- <div class="footer-nav">
+                        <a href="index.html">INICIO</a>
+                        <a href="info.html">INFO</a>
+                        <a href="#">CRONOGRAMA</a>
+                        <a href="news.html">NEWS</a>
+                        <a href="entradas.html">ENTRADAS</a>
+                        <a href="contact.html">CONTACTO</a>
+                    </div> -->
+                    <b><hr></b>
+                    <p class="copyright mt-3">© 2025 Esports Arena. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="entradas.js"></script>
+    <script>
+        // Activar el fondo de partículas
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activar las animaciones de los pasos
+            const stepCards = document.querySelectorAll('.step-card');
+            stepCards.forEach(card => {
+                card.classList.add('animated');
+            });
+            
+            // Inicializar el canvas de plexus si existe el script
+            if (typeof initPlexusBackground === 'function') {
+                initPlexusBackground();
+            }
+            
+            // Activar ScrollTrigger para animaciones al hacer scroll
+            if (typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+                
+                gsap.utils.toArray('.fade-in').forEach(element => {
+                    gsap.from(element, {
+                        opacity: 0,
+                        y: 30,
+                        duration: 1,
+                        scrollTrigger: {
+                            trigger: element,
+                            start: "top 80%",
+                            toggleActions: "play none none none"
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

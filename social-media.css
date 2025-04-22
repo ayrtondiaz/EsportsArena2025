@@ -1,0 +1,428 @@
+/* Estilos para la sección Social Media con tema de radio y gaming */
+.social-media {
+  background: linear-gradient(135deg, #1a0530 0%, #2a0a4a 100%);
+  padding: 60px 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(181, 126, 220, 0.3);
+  border-bottom: 1px solid rgba(181, 126, 220, 0.3);
+}
+
+/* Efecto de ondas de radio */
+.social-media::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, rgba(181, 126, 220, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.5;
+  z-index: 0;
+  animation: pulse 4s infinite alternate;
+}
+
+/* Línea de frecuencia de radio */
+.radio-frequency {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(181, 126, 220, 0.5);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.radio-frequency::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #b57edc, transparent);
+  animation: frequencyWave 3s infinite linear;
+}
+
+.social-media .container {
+  position: relative;
+  z-index: 2;
+}
+
+.social-media h3 {
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4;
+  text-shadow: 0 0 10px rgba(181, 126, 220, 0.7);
+}
+
+.highlight-text {
+  color: #b57edc;
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  padding: 0 5px;
+}
+
+.highlight-text::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #b57edc;
+  animation: glowLine 2s infinite alternate;
+}
+
+.hosts-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+.hosts-title::before,
+.hosts-title::after {
+  content: "●";
+  color: #b57edc;
+  position: absolute;
+  top: 80%;
+  transform: translateY(-50%);
+  animation: blink 1.5s infinite alternate;
+}
+
+.hosts-title::before {
+  left: -20px;
+}
+
+.hosts-title::after {
+  right: -20px;
+}
+
+.sponsor-logo2 {
+  padding: 30px;
+  padding-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  height: 400px;
+  width: auto;
+}
+
+.sponsor-logo2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(181, 126, 220, 0.5);
+}
+
+.sponsor-logo2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  filter: grayscale(20%);
+}
+
+.sponsor-logo2:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.host-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(26, 5, 48, 0.9), transparent);
+  padding: 20px;
+  transform: translateY(50%);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsor-logo2:hover .host-overlay {
+  transform: translateY(0);
+}
+
+.host-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 5px;
+  text-shadow: 0 0 10px rgba(181, 126, 220, 0.7);
+}
+
+.host-role {
+  font-size: 1rem;
+  color: #b57edc;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.host-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease 0.1s;
+}
+
+.sponsor-logo2:hover .host-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-watch {
+  background: linear-gradient(135deg, #b57edc 0%, #8a4baf 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(138, 75, 175, 0.4);
+}
+
+.btn-watch::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.btn-watch:hover {
+  background: linear-gradient(135deg, #8a4baf 0%, #b57edc 100%);
+  box-shadow: 0 5px 20px rgba(138, 75, 175, 0.6);
+  transform: translateY(-3px);
+}
+
+.btn-watch:hover::before {
+  left: 100%;
+}
+
+.btn-watch i {
+  margin-right: 8px;
+  font-size: 1.2rem;
+}
+
+.live-indicator {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #ff3e3e;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  top: -1px;
+  animation: pulse 1.5s infinite;
+}
+
+.schedule-info {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes frequencyWave {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes glowLine {
+  0% {
+    box-shadow: 0 0 5px rgba(181, 126, 220, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(181, 126, 220, 0.8);
+  }
+}
+
+@keyframes blink {
+  0%,
+  80% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.3;
+  }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .social-media h3 {
+    font-size: 1.5rem;
+  }
+
+  .sponsor-logo2 {
+    height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .social-media {
+    padding: 40px 15px;
+  }
+
+  .social-media h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .sponsor-logo2 {
+    height: 250px;
+    padding: 20px;
+    padding-bottom: 40px;
+  }
+
+  .host-overlay {
+    transform: translateY(60%);
+    padding: 15px;
+  }
+
+  .host-name {
+    font-size: 1.5rem;
+  }
+
+  .host-role {
+    font-size: 0.9rem;
+  }
+
+  .btn-watch {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Always show host info on mobile for better UX */
+  .sponsor-logo2 .host-overlay {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(26, 5, 48, 0.9) 70%, transparent);
+  }
+
+  .sponsor-logo2 .host-desc {
+    opacity: 1;
+    transform: translateY(0);
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .social-media {
+    padding: 30px 10px;
+  }
+
+  .social-media h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .social-media h6 {
+    font-size: 0.9rem;
+  }
+
+  .sponsor-logo2 {
+    height: 200px;
+    margin-bottom: 15px;
+    padding: 15px;
+    padding-bottom: 30px;
+  }
+
+  .host-name {
+    font-size: 1.2rem;
+    margin-bottom: 2px;
+  }
+
+  .host-role {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .host-desc {
+    font-size: 0.75rem;
+  }
+
+  .btn-watch {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  .btn-watch i {
+    font-size: 1rem;
+  }
+
+  /* Adjust the layout for the social media section */
+  .social-media .row.sponsors-row {
+    margin: 0 -5px;
+  }
+
+  .social-media .row.sponsors-row > [class*="col-"] {
+    padding: 0 5px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .sponsor-logo2:hover {
+    transform: none;
+  }
+
+  .sponsor-logo2:active {
+    transform: translateY(-5px);
+  }
+
+  .sponsor-logo2 .host-overlay {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(26, 5, 48, 0.9) 70%, transparent);
+  }
+
+  .sponsor-logo2 .host-desc {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .sponsor-logo2:hover img {
+    transform: none;
+  }
+}

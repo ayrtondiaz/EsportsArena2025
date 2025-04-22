@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Noticia - Esports Arena | JUL 20</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="neon-animations.css">
+    <style>
+        #detalle {
+            padding-top: 150px;
+            padding-bottom: 60px;
+            background-color: transparent;
+            position: relative;
+            min-height: calc(100vh - 200px);
+            z-index: 1;
+        }
+        .card-date {
+            font-size: smaller;
+            color: #ffffff;
+            font-style: italic;
+            }
+        .detalle-imagen {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.5s ease;
+        }
+        
+        .detalle-imagen:hover {
+            transform: scale(1.02);
+        }
+        
+        .detalle-titulo {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(181, 126, 220, 0.3);
+        }
+        
+        .detalle-fecha {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 25px;
+            font-weight: 300;
+            display: block;
+        }
+        
+        .detalle-descripcion {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .btn-volver {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--dark-purple);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            margin-top: 20px;
+        }
+        
+        .btn-volver:hover {
+            background-color: #9b59b6;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.5);
+            color: var(--dark-purple);
+        }
+        
+        /* Hot News Sidebar */
+        .hot-news-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(181, 126, 220, 0.3);
+        }
+        
+        .hot-news-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(181, 126, 220, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        
+        .hot-news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(181, 126, 220, 0.5);
+            border-color: var(--accent-color);
+        }
+        
+        .hot-news-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        
+        .hot-news-title-card {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .hot-news-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+        }
+        
+        .btn-ver-mas {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-color);
+            color: var(--dark-purple);
+            padding: 8px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+        }
+        
+        .btn-ver-mas:hover {
+            background-color: #9b59b6;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.5);
+            color: var(--dark-purple);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .hot-news-container {
+                margin-top: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <div class="logo-container">
+                        <a href="./index.html"><img src="./assets/logo.webp" style="width: 30%;" alt="Esports Arena Logo" class="logo"></a>
+                        
+                     </div>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="info.html" id="infoDropdown" role="button">
+                            INFO
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <li><a class="dropdown-item" href="info.html#about">SOBRE NOSOTROS</a></li>                            
+                            <li><a class="dropdown-item" href="info.html#ubicacion">UBICACIÓN</a></li>
+                            <li><a class="dropdown-item" href="info.html#faqs">FAQs</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="cronograma.html">CRONOGRAMA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">NEWS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="entradas.html">ENTRADAS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACTO</a></li>
+                </ul>
+                <a class="navbar-brand ms-auto" href="index.html">
+                    <div class="logo-container">
+                        <!-- <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mascotits-o1yluqwcoFq6kZksDY54adv2e95QFu.png" alt="Esports Arena Logo" class="logo-mascot"> --> -->
+                        <img src="./assets/logo-blanco.webp" alt="Esports Arena Logo" class="logo-mascot">
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header> 
+    <!-- Detalle Section -->
+    <section id="detalle">
+        <div class="container">
+            <div class="row">
+                <!-- Contenido principal -->
+                <div class="col-lg-8">
+                    <img id="detalle-imagen" class="detalle-imagen" src="/placeholder.svg" alt="Imagen de la noticia">
+                    <h1 id="detalle-titulo" class="detalle-titulo">Título de la noticia</h1>
+                    <span id="detalle-fecha" class="detalle-fecha">Fecha de publicación</span>
+                    <div id="detalle-descripcion" class="detalle-descripcion">Descripción de la noticia</div>
+                    <a href="news.html" class="btn-volver">Volver a noticias</a>
+                </div>
+                
+                <!-- Sidebar Hot News -->
+                <div class="col-lg-4 hot-news-container">
+                    <h2 class="hot-news-title">HOT NEWS</h2>
+                    <div id="hot-news-list">
+                        <!-- Las noticias relacionadas se cargarán dinámicamente aquí -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 gamer-footer">
+        <div class="footer-bg-overlay"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="footer-social">
+                        <h3 class="footer-title">SÍGUENOS <i class="fas fa-headset ms-2"></i></h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitch"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                        </div>
+                        <p class="footer-slogan mt-3">ÚNETE A LA COMUNIDAD GAMER DEFINITIVA</p>
+                    </div>
+                </div>
+                <div class="col-md-5 text-end">
+                    <div class="footer-logo">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mascotits-o1yluqwcoFq6kZksDY54adv2e95QFu.png" alt="Esports Arena Mascot" class="img-fluid glow-effect" style="max-height: 120px;">
+                        <p class="hashtag neo-text">#ESPORTSARENA2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <!-- <div class="footer-nav">
+                        <a href="index.html">INICIO</a>
+                        <a href="info.html">INFO</a>
+                        <a href="#">CRONOGRAMA</a>
+                        <a href="news.html">NEWS</a>
+                        <a href="entradas.html">ENTRADAS</a>
+                        <a href="contact.html">CONTACTO</a>
+                    </div> -->
+                    <b><hr></b>
+                    <p class="copyright mt-3">© 2025 Esports Arena. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="menu-active.js"></script>
+    <script src="plexus-background.js"></script>
+    <script src="detalle.js"></script>
+</body>
+</html>
